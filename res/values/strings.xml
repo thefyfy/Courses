@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Courses!</string>
+    <string name="app_name">Courses</string>
+
+    <string-array name="liste_parametres">
+        <item>Choisir un ami</item>
+    
+    </string-array>
+</resources>
