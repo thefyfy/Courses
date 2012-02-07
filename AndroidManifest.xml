@@ -22,6 +22,7 @@
         <activity android:name="Liste"></activity>
         <activity android:name="Emplettes"></activity>
         <activity android:name="Parametres"></activity>
+        <activity android:name="Ajout_produit"></activity>
     </application>
 
 </manifest>

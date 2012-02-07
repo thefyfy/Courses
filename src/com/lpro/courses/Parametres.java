@@ -1,7 +1,5 @@
 package com.lpro.courses;
 
-import java.util.HashSet;
-
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -20,15 +18,24 @@ import android.widget.TextView;
 public class Parametres extends ListActivity {
     
 	private final int PICK_CONTACT = 0;
+	private final String PREFS_NAME = "prefsListeCourse";
+	private SharedPreferences prefs = null;
 
 	
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);               
         
-        setListAdapter(ArrayAdapter.createFromResource(getApplicationContext(), R.array.liste_parametres, R.layout.liste_params));
-        		
+        String[] preferences = getResources().getStringArray(R.array.liste_parametres);
+        prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String preference = prefs.getString("nomAmi", preferences[0]);
+        String[] values = new String[] { preference };
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.liste_params, values);
+		setListAdapter(adapter);
+        
+        System.out.println(preference);
+		
 		getListView().setOnItemClickListener(new OnItemClickListener() 
 		{
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
@@ -57,18 +64,14 @@ public class Parametres extends ListActivity {
     			if(c.moveToFirst())
     			{
     				String name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-    				String id = c.getString(c.getColumnIndex(ContactsContract.Contacts._ID));
      				
     				TextView tv = (TextView)findViewById(R.id.liste_params);
     				tv.setText(Html.fromHtml(name + "<br /><small>Choisir un autre ami</small>"));
     				
     				//sauvegarde de l'ami choisi
-    				SharedPreferences prefs = getSharedPreferences("ami", MODE_PRIVATE);
+    				prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
     		        SharedPreferences.Editor editeur = prefs.edit();
-    		        HashSet<String> list = new HashSet<String>();
-    		        list.add(name);
-    		        list.add(id);
-    		        editeur.putStringSet("liste de courses", list);
+    		        editeur.putString("nomAmi", name);
     		        editeur.commit();
     			}
     		}

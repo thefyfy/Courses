@@ -8,4 +8,17 @@
         <item>Choisir un ami</item>
     
     </string-array>
+    
+    <string-array name="ajout_produit">
+        <item>Ajouter un produit...</item>
+    </string-array>
+    
+    <string-array name="liste_produits">
+        <item>Patates</item>
+        <item>Banane</item>
+        <item>Viande</item>
+        <item>Pain</item>
+        <item>Lait</item>
+        <item>Oeufs</item>            
+    </string-array>
 </resources>
