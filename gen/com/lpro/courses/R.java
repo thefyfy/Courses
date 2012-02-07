@@ -9,9 +9,8 @@ package com.lpro.courses;
 
 public final class R {
     public static final class array {
-        public static final int ajout_produit=0x7f050001;
         public static final int liste_parametres=0x7f050000;
-        public static final int liste_produits=0x7f050002;
+        public static final int liste_produits=0x7f050001;
     }
     public static final class attr {
     }
@@ -39,6 +38,7 @@ public final class R {
         public static final int options_menu=0x7f060000;
     }
     public static final class string {
+        public static final int ajout_produit=0x7f040002;
         public static final int app_name=0x7f040001;
         public static final int hello=0x7f040000;
     }

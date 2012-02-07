@@ -6,10 +6,10 @@
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView1"
-        android:layout_width="0"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Choisissez un produit" >
+        android:text="@string/ajout_produit">
 
         <requestFocus />
     </AutoCompleteTextView>

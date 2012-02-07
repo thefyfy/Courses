@@ -9,9 +9,7 @@
     
     </string-array>
     
-    <string-array name="ajout_produit">
-        <item>Ajouter un produit...</item>
-    </string-array>
+    <string name="ajout_produit">Ajouter un produit&#8230;</string>
     
     <string-array name="liste_produits">
         <item>Patates</item>
