@@ -14,8 +14,9 @@ public class Ajout_produit extends Activity
 		setContentView(R.layout.ajout_produit);
 		
 		
+		String[] produits = getResources().getStringArray(R.array.liste_produits);
 		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
-	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.ajout_produit, R.array.liste_produits);
+	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.produit_item, produits);
 	    textView.setAdapter(adapter);
 	    
 	}

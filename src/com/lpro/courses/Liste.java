@@ -18,9 +18,11 @@ public class Liste extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        String[] produits = getResources().getStringArray(R.array.ajout_produit);
+        String[] produits = getResources().getStringArray(R.array.liste_produits);
+        //produits = getResources().getStringArray(R.string.ajout_produit);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.produit, produits);
 		setListAdapter(adapter);
+		
 		
 		getListView().setOnItemClickListener(new OnItemClickListener() 
 		{
